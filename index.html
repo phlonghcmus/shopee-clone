@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/reponsvie.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <body>
     <div class="app">
         <header class="header">
-            <div class="grid">
-                <nav class="header__navbar">
+            <div class="grid wide">
+                <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item header__navbar-item--has-qr text--separate ">
                             Vào cửa hàng trên ứng dụng F8-Shop
@@ -124,7 +126,10 @@
                 </nav>
                 <!-- Header with search -->
                 <div class="header-with-search">
-                    <div class="header__logo">
+                    <label for="mobile-search-checkbok" class="header__mobile-search">
+                        <i class="header__mobile-search-icon fas fa-search"></i>
+                    </label>
+                    <div class="header__logo hide-on-tablet ">
                         <a href="/" class="header__logo-link">
                             <svg viewBox="0 0 192 65" class="header__logo-img">
                                 <g fill-rule="evenodd">
@@ -135,6 +140,7 @@
                             </svg>
                         </a>
                     </div>
+                    <input type="checkbox" hidden id="mobile-search-checkbok" class="header__search-checkbox">
                     <div class="header__search">
                         <div class="header__search-input-wrap">
                             <input type="text" class="header__search-input" placeholder="Nhập để tìm kiếm sản phẩm">
@@ -260,66 +266,6 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="header__cart-item">
-                                        <img src="./assets/img/cart1.jpg" alt="Sản phẩm 1" class="header__cart-item-img">
-                                        <div class="header__cart-item-info">
-                                            <div class="header__cart-item-head">
-                                                <h5 class="header__cart-item-name">
-                                                    Nước rửa chén Sunlight
-                                                </h5>
-                                                <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">2.000.000đ</span>
-                                                <span class="header__cart-item-muti">x</span>
-                                                <span class="header__cart-item-quanity">2</span>
-                                                </div>
-                                                
-                                            </div>
-                                            <div class="header__cart-item-body">
-                                                <span class="header__cart-item-decs">Phân loại: Bạc</span>
-                                                <span class="header__cart-item-remove">Xóa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="header__cart-item">
-                                        <img src="./assets/img/cart1.jpg" alt="Sản phẩm 1" class="header__cart-item-img">
-                                        <div class="header__cart-item-info">
-                                            <div class="header__cart-item-head">
-                                                <h5 class="header__cart-item-name">
-                                                    Nước rửa chén Sunlight
-                                                </h5>
-                                                <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">2.000.000đ</span>
-                                                <span class="header__cart-item-muti">x</span>
-                                                <span class="header__cart-item-quanity">2</span>
-                                                </div>
-                                                
-                                            </div>
-                                            <div class="header__cart-item-body">
-                                                <span class="header__cart-item-decs">Phân loại: Bạc</span>
-                                                <span class="header__cart-item-remove">Xóa</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="header__cart-item">
-                                        <img src="./assets/img/cart1.jpg" alt="Sản phẩm 1" class="header__cart-item-img">
-                                        <div class="header__cart-item-info">
-                                            <div class="header__cart-item-head">
-                                                <h5 class="header__cart-item-name">
-                                                    Nước rửa chén Sunlight
-                                                </h5>
-                                                <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">2.000.000đ</span>
-                                                <span class="header__cart-item-muti">x</span>
-                                                <span class="header__cart-item-quanity">2</span>
-                                                </div>
-                                                
-                                            </div>
-                                            <div class="header__cart-item-body">
-                                                <span class="header__cart-item-decs">Phân loại: Bạc</span>
-                                                <span class="header__cart-item-remove">Xóa</span>
-                                            </div>
-                                        </div>
-                                    </li>
                                 </ul>
                                 <a class="header__cart-view-cart btn btn--primary">Xem giỏ hàng</a>
                             </div>
@@ -327,11 +273,25 @@
                     </div>
                 </div>
             </div>
+            <ul class="header__sort-bar">
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="header__sort-link">Phổ biến</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Mới nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </ul>
         </header>
         <div class="app__container">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__column-2">
+            <div class="grid wide">
+                <div class="row sm-gutter app__content">
+                    <div class="col l-2 m-0 c-0">
                         <nav class="category">
                             <h3 class="category__heading">
                                 <i class="category__heading-icon fas fa-list"></i>
@@ -350,8 +310,8 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="grid__column-10">
-                        <div class="home-filter">
+                    <div class="col l-10 m-12 c-12">
+                        <div class="home-filter hide-on-mobile-tablet">
                             <span class="home-filter__label">Sắp xếp theo</span>
                             <button class="home-filter_btn btn">Phổ Biến</button>
                             <button class="home-filter_btn btn btn--primary">Mới Nhất</button>
@@ -383,9 +343,47 @@
                                     </div>
                             </div>
                         </div>
+                        <!-- Mobile Category -->
+                        <nav class="mobile-category">
+                            <ul class="mobile-category__list">
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                            </ul>
+                        </nav>
                         <div class="home-product">
-                            <div class="grid__row">
-                                <div class="row_col-5">
+                            <div class="row">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- Product Item -->
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/5/8/637560625975691589_msi-modern-14-b11mol-420vn-i3-1115g4-xam-ct2.jpg');"></div>
@@ -422,7 +420,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="row_col-5">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- Product Item -->
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/5/8/637560625975691589_msi-modern-14-b11mol-420vn-i3-1115g4-xam-ct2.jpg');"></div>
@@ -459,7 +457,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="row_col-5">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- Product Item -->
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/5/8/637560625975691589_msi-modern-14-b11mol-420vn-i3-1115g4-xam-ct2.jpg');"></div>
@@ -496,7 +494,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="row_col-5">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- Product Item -->
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/5/8/637560625975691589_msi-modern-14-b11mol-420vn-i3-1115g4-xam-ct2.jpg');"></div>
@@ -533,7 +531,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="row_col-5">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- Product Item -->
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/5/8/637560625975691589_msi-modern-14-b11mol-420vn-i3-1115g4-xam-ct2.jpg');"></div>
@@ -570,7 +568,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="row_col-5">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- Product Item -->
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/5/8/637560625975691589_msi-modern-14-b11mol-420vn-i3-1115g4-xam-ct2.jpg');"></div>
@@ -607,7 +605,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="row_col-5">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- Product Item -->
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/5/8/637560625975691589_msi-modern-14-b11mol-420vn-i3-1115g4-xam-ct2.jpg');"></div>
@@ -644,7 +642,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="row_col-5">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- Product Item -->
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/5/8/637560625975691589_msi-modern-14-b11mol-420vn-i3-1115g4-xam-ct2.jpg');"></div>
@@ -681,7 +679,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="row_col-5">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- Product Item -->
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/5/8/637560625975691589_msi-modern-14-b11mol-420vn-i3-1115g4-xam-ct2.jpg');"></div>
@@ -718,7 +716,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="row_col-5">
+                                <div class="col l-2-4 m-4 c-6">
                                     <!-- Product Item -->
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item__img" style="background-image: url('https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2021/5/8/637560625975691589_msi-modern-14-b11mol-420vn-i3-1115g4-xam-ct2.jpg');"></div>
@@ -795,9 +793,9 @@
             </div>
         </div>
         <footer class="footer">
-            <div class="grid mb-32">
-                <div class="grid__row">
-                    <div class="row_col-5">
+            <div class="grid wide mb-32">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">CHĂM SÓC KHÁCH HÀNG</h3>
                         <ul class="footer__list">
                             <li class="footer__list-item">
@@ -811,7 +809,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="row_col-5">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">VỀ F8 SHOP</h3>
                         <ul class="footer__list">
                             <li class="footer__list-item">
@@ -825,8 +823,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="row_col-5"></div>
-                    <div class="row_col-5">
+                    <div class="col l-2-4 m-0 c-0"></div>
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">THEO DÕI CHÚNG TÔI TRÊN</h3>
                         <ul class="footer__list">
                             <li class="footer__list-item">
@@ -849,7 +847,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="row_col-5">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">VÀO CỦA HÀNG TRÊN ỨNG DỤNG F8 SHOP</h3>
                         <div class="footer__download">
                             <img src="./assets/img/qr_code.png" alt="QR CODE" class="footer__download-qr">
@@ -862,7 +860,7 @@
                 </div>
             </div>
             <div class="footer__clone">
-                <div class="grid__row ">
+                <div class="row ">
                     <p class="footer__text">
                         Clone 
                         <a class="footer__clone-link" href="https://shopee.vn/">https://shopee.vn/</a>

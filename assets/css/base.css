@@ -6,6 +6,7 @@
     --star-gold: #FFCE3E;
     --navbar-height: 31.6px;
     --header-height: 120px;
+    --header-sort-bar-height: 46px;
     --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
 }
 *
@@ -38,36 +39,11 @@ html
     font-weight: 500 !important;
 }
 /*Reponsive*/
-.grid   
-{
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto;
-}
-.grid__full_width
-{
-    width: 100%;
-}
 .grid__row
 {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -5px
-}
-/*??*/
-.grid__column-2
-{
-    padding: 0 5px;
-    width: 16.6667%;
-}
-.row_col-5
-{
-    padding: 0 5px;
-    width: 20%;
-}
-.grid__column-10
-{
-    width: 83.33333%;
 }
 body>p
 {
